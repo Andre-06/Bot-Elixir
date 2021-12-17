@@ -1,0 +1,253 @@
+    """if '+' in dado:
+                  posicao = dado.split('d')
+                  print(posicao) 
+                  print(posicao[0])
+                  print(posicao[1])
+                  separa = posicao[1].split('+')
+                  print(separa)
+                  soma = []
+                  somaStr = separa[1:]
+                  count = 0
+                  while count < len(somaStr):
+                    soma.append(int(somaStr[count]))
+                    count = count + 1
+                  soma = sum(soma)
+                  x = posicao[0]
+                  if x == '':
+                    x = 1
+                  else:
+                    x = int(x)
+                  y = int(separa[0])
+                  print(type(x))
+                  print(x)
+                  if dadosJogados > 100:
+                    x = 1000000
+                  if x > 100:
+                    resultado = 'XXXX'
+                    todosOsDados = '[Limite Alcançado]'
+                    maisDeUmDado = ''
+                  elif y > 500:
+                    resultado = 'XXXX'
+                    todosOsDados = '[Limite Alcançado]'
+                    maisDeUmDado = ''
+                  else:
+                    count = 0
+                    maisDeUmDado = 0
+                    todosOsDados = []
+                    while x > count:
+                      deu = random.randint(1, y)
+                      maisDeUmDado = maisDeUmDado + deu
+                      todosOsDados.append(deu)
+                      count = count + 1 
+                      print(todosOsDados)
+                    
+                  resultado = maisDeUmDado + soma
+                  print(separa)
+                  
+                elif '-' in dado:
+                  posicao = dado.split('d')
+                  separa = posicao[1].split('-')
+                  soma = []
+                  somaStr = separa[1:]
+                  count = 0
+                  while count < len(somaStr):
+                    soma.append(int(somaStr[count])*-1)
+                    count = count + 1
+                  soma = sum(soma)*-1
+                  x = posicao[0]
+                  if x == '':
+                    x = 1
+                  else:
+                    x = int(x)
+                  y = int(separa[0])
+                  if dadosJogados > 100:
+                    x = 1000000
+                  if x > 100:
+                    resultado = 'XXXX'
+                    todosOsDados = '[Limite Alcançado]'
+                    maisDeUmDado = ''
+                  elif y > 500:
+                    resultado = 'XXXX'
+                    todosOsDados = '[Limite Alcançado]'
+                    maisDeUmDado = ''
+                  else:
+                    count = 0
+                    maisDeUmDado = 0
+                    todosOsDados = []
+                    while x > count:
+                      deu = random.randint(1, y)
+                      maisDeUmDado = maisDeUmDado + deu
+                      todosOsDados.append(deu)
+                      count = count + 1 
+                      print(todosOsDados)
+            
+                  resultado = int(maisDeUmDado) - soma
+                  print(separa)
+            
+                else:
+                  soma = 0
+                  posicao = dado.split('d')
+                  x = posicao[0]
+                  if x == '':
+                    x = 1
+                  else:
+                    x = int(x)
+                  y = int(posicao[1])
+                  if dadosJogados > 100:
+                    count = dadosJogados + 15
+                    dadosJogados = -17
+                    x = 1000000
+                  if x > 100:
+                    resultado = 'XXXX'
+                    todosOsDados = '[Limite Alcançado]'
+                    maisDeUmDado = ''
+                  elif y > 500:
+                    resultado = 'XXXX'
+                    todosOsDados = '[Limite Alcançado]'
+                    maisDeUmDado = ''
+                  else:
+                    count = 0
+                    maisDeUmDado = 0
+                    todosOsDados = []
+                    while count < x:
+                      deu = random.randint(1, y)
+                      maisDeUmDado = maisDeUmDado + deu
+            
+                      todosOsDados.append(deu)
+                      count = count + 1 
+                      print(todosOsDados)
+                    resultado = int(maisDeUmDado)
+
+    """
+def rolagemTag(dado):
+    dadosJogados = 1
+    finalNal = ''
+    variosDadosSomados = []
+    finalzalzãozão = []
+    if '#' in dado:
+        dadoSeparado = dado.split('#')
+        dado = dadoSeparado[1]
+        print(dado)
+        print(dado[0])
+        print(dado[1])
+        dadosJogados = int(dadoSeparado[0])
+    dadosFinais = []
+    dadosFinaisPuros = []
+    countMaster = 0
+    somazona = []
+    somaquasezona = []
+    while countMaster < dadosJogados:
+        sinal = qualSinal(dado)
+        if sinal == IndexError:
+            posicao = dado.split('d')
+            print(posicao)
+            print(posicao[0])
+            print(posicao[1])
+            separa = posicao[1]
+            x = posicao[0]
+            if x == '':
+                x = 1
+            else:
+                x = int(x)
+            y = int(separa)
+            print(type(x))
+            print(x)
+            somaStr = []
+        else:
+            antDado = dado.split(sinal)
+            for dadin in antDado:
+                posicaoAnt = dadin.split('d')
+                try:
+                    print(posicaoAnt[1])
+                except IndexError:
+                    somaquasezona.append(str(posicaoAnt[0]))
+                else:
+                    variosDadosSomados.append(posicaoAnt)
+            print(variosDadosSomados)
+            for dado in variosDadosSomados:
+                posicao = dado
+                print(posicao)
+                print(posicao[0])
+                print(posicao[1])
+                separa = posicao[1].split(sinal)
+                print(separa)
+                x = posicao[0]
+                if x == '':
+                    x = 1
+                else:
+                    x = int(x)
+                y = int(separa[0])
+                print(type(x))
+                print(x)
+                somaStr = separa[1:]
+                soma = []
+                print(f'soma str {somaStr}')
+                count = 0
+                """
+                while count < len(somaStr):
+                    if 'd' in somaStr[count]:
+                        rolagem = rolagem('1', somaStr[count])
+                        soma.append(rolagem[0])
+                        somaFinal = rolagem[1]
+                        print(somaFinal)
+                    else:
+                        somaFinal = ''
+                        soma.append(int(somaStr[count]))
+                    count = count + 1
+                """
+                soma = sum(soma)
+                if sinal == '-':
+                    soma = soma * -1
+
+                if dadosJogados > 100:
+                    x = 1000000
+                if x > 100:
+                    resultado = 'XXXX'
+                    todosOsDados = '[Limite Alcançado]'
+                    maisDeUmDado = ''
+                elif y > 500:
+                    resultado = 'XXXX'
+                    todosOsDados = '[Limite Alcançado]'
+                    maisDeUmDado = ''
+                else:
+                    count = 0
+                    maisDeUmDado = 0
+                    todosOsDados = []
+                    while x > count:
+                        deu = random.randint(1, y)
+                        maisDeUmDado = maisDeUmDado + deu
+                        todosOsDados.append(deu)
+                        count = count + 1
+                        print(todosOsDados)
+
+                resultado = maisDeUmDado + soma
+                print(separa)
+                print(posicao)
+                if type(todosOsDados) == str:
+                    final = f"` {resultado} ` ⟵ {todosOsDados} {'d'.join(dado)}"
+                else:
+                    todosOsDados.sort(reverse=True)
+                    print(todosOsDados)
+                    count = 0
+                    while count < len(todosOsDados):
+                        if todosOsDados[count] == 1 or todosOsDados[count] == y or todosOsDados[count] == 17:
+                            todosOsDados[count] = f'**{todosOsDados[count]}**'
+                            print(todosOsDados[count])
+                        else:
+                            count = count + 1
+
+                    final = f"` {resultado} ` ⟵ {todosOsDados} {'d'.join(dado)}"
+                    somazona.append(resultado)
+                    finalzalzãozão.append(final)
+        if len(finalzalzãozão) > 1 :
+            s = []
+            for i in somaquasezona:
+                s.append(int(i))
+            somaA = sum(somazona) + sum(s)
+            print(somaquasezona)
+            dadosFinais.append( f"**{somaA}**"+ ' | ' + "+".join(finalzalzãozão) + ' ' + str(sinal).join(somaquasezona) + '\n')
+        dadosFinaisPuros.append(resultado)
+        countMaster = countMaster + 1
+
+    print(dadosFinais)
+    return (''.join(dadosFinais), resultado, dadosFinaisPuros, todosOsDados, maisDeUmDado)
